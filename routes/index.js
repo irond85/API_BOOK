@@ -13,9 +13,20 @@ router.get('/', async function(req, res, next) {
 
 });
 
+router.get('/:bookId', async function(req, res, next) {
+  const idBook = req.params.bookId;
+
+  const book = await book_services.findBookById(id);
+
+  res.render('detail', {
+    respuesta: book
+  });
+
+});
+
 router.get('/add_book', (req, res, next) => {
   res.render('register', { title: "Iniciar Sesión" });
-})
+});
 
 router.post('/add_book', async (req, res, next) => {
   let book = req.body;

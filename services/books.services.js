@@ -13,10 +13,11 @@ exports.findBooks = async () => {
     return json
 }
 
-// exports.findCharacterById = async (id) => {
-//     const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`,
-//     { method: 'get'})
-//     const json = response.json();
+exports.findBookById = async (id) => {
+
+    const response = await fetch(`http://localhost:4040/api/book/${id}`,
+    { method: 'get'})
+    const json = response.json();
     
-//     return json
-// }
+    return json
+}
