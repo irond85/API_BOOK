@@ -6,12 +6,13 @@ block content
   div(class="galeria")
     for book in respuesta
       div(class="card ")
-        img(class="card-img-top" src="http://localhost:4040/#{book.image}")
+        if book.image != null
+          img(class="card-img-top" src="http://localhost:4040/#{book.image}")
         div(class="card-body")
           h3(class="card-title") #{book.name}
           h5(class="card-subtitle mb-2 text-muted")  #{book.author}
           h5(class="card-subtitle mb-2 text-muted")  #{book.stock}
-          h5(class="card-subtitle mb-2 text-muted")  #{book.estado}
+          h5(class="card-subtitle mb-2 text-muted")  #{book.state}
           //- p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.
-          //- a(href="books/#{book.id}" class="card-link") ver detalle
+          a(href="/book/#{book.id}" class="card-link") Ver detalle
           //- a(href="#" class="card-link") Another link

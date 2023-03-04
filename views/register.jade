@@ -3,6 +3,9 @@ extends layout
 block content
     div(class="container")
 
+        if error
+            div(class="alert alert-danger") Todos los campos deben estar llenos
+
         h1= "Registrar libro"
 
         div(class="card", style="max-width: 30rem")
@@ -21,7 +24,7 @@ block content
                         label(for="state", class="form-label") Cantidad
                         select(class="form-select form-select-lg mb-3" name="state" aria-label=".form-select-lg example")
                             option(selected name="state") Selecciona un estado
-                            option(name="state", value="disponible") Disponible
-                            option(name="state", value="nodisponible") No Disponible
+                            option(name="state", value="Disponible") Disponible
+                            option(name="state", value="No Disponible") No Disponible
                     div(class="my-2") 
                         button(type="submit", class="btn btn-dark") Ingresar  
