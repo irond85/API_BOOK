@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    div(class="container")
+
+        h1= "Registrar libro"
+
+        div(class="card", style="max-width: 30rem")
+            div(class="card-body")
+                form(action="/add_book", method="post") 
+                    div 
+                        label(for="name", class="form-label") Nombre del libro
+                        input(type="text", name="name", class="form-control", require)
+                    div 
+                        label(for="author", class="form-label") Autor del libro
+                        input(type="text", name="author", class="form-control", require)
+                    div 
+                        label(for="stock", class="form-label") Cantidad
+                        input(type="number", name="stock", class="form-control", require)
+                    div 
+                        label(for="state", class="form-label") Cantidad
+                        select(class="form-select form-select-lg mb-3" name="state" aria-label=".form-select-lg example")
+                            option(selected name="state") Selecciona un estado
+                            option(name="state", value="disponible") Disponible
+                            option(name="state", value="nodisponible") No Disponible
+                    div(class="my-2") 
+                        button(type="submit", class="btn btn-dark") Ingresar  
