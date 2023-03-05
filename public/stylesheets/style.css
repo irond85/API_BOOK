@@ -9,12 +9,36 @@ a {
 
 .galeria{
   display: grid;
-  gap: 1rem;
+  gap: 5%;
   grid-auto-flow: dense;
-  grid-auto-rows: 45rem;
+  grid-auto-rows: 35.3rem;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  margin-top: 2rem;
 }
 
-.agregado{
-  grid-column: span 2;
+.detalle{
+  display: grid;
+  gap: 5%;
+  grid-auto-flow: dense;
+  grid-auto-rows: 35.3rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  margin-top: 6rem;
+}
+
+.boton_detalle {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 20px;
+  font-weight: bold;
+  background: #191970;
+  border-color: #191970;
+  position: relative;
+  border-radius: 3rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+}
+.boton_detalle:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgb(21, 57, 71);
+  transition: all 0.2s ease;
 }

@@ -1,18 +1,37 @@
 extends layout
 
 block content
-  h1= "Lista De Mis Favoritos"
+  div(class="container-fluid")
+    h1(style ="margin-top: 78px; font-weight: bold; text-align: center") El Inventario de los Novelistas...
+    div(class="galeria")
+      for book in respuesta
+        div(class="card" style="border-radius: 1rem")
+          img(class="card-img-top" style="width: 10rem; margin-top: 1rem; margin-left: 5rem" src="https://www.loqueleo.com/mx/uploads/2020/06/resized/600_captura.PNG")
+          //- if book.image != null
+            //- img(class="card-img-top" src="http://localhost:4040/#{book.image}")
+          div(class="card-body")
+            h3(class="card-title" style="text-align: center;") #{book.name}
+            h5(class="card-text" style="text-align: center; margin-top: 1.5rem")  Autor: #{book.author}
+            h5(class="card-text" style="text-align: center")  Stock: #{book.stock} libro(s)
+            h5(class="card-text" style="text-align: center;")  Estado: #{book.state}
+            br
+            p(class="card-text" style="text-align: center") ¿Deseas conocer más sobre tu libro favorito? 
 
-  div(class="galeria")
-    for book in respuesta
-      div(class="card ")
-        if book.image != null
-          img(class="card-img-top" src="http://localhost:4040/#{book.image}")
-        div(class="card-body")
-          h3(class="card-title") #{book.name}
-          h5(class="card-subtitle mb-2 text-muted")  #{book.author}
-          h5(class="card-subtitle mb-2 text-muted")  #{book.stock}
-          h5(class="card-subtitle mb-2 text-muted")  #{book.state}
-          //- p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.
-          a(href="/book/#{book.id}" class="card-link") Ver detalle
-          //- a(href="#" class="card-link") Another link
+            div(class="d-grid gap-2 col-6 mx-auto")
+              a(href="/book/#{book.id}" class="boton_detalle") Ver Detalle 
+                i(class="fa-regular fa-eye")
+
+            br
+  //- div(class="galeria")
+  //-   for book in respuesta
+  //-     div(class="card ")
+  //-       if book.image != null
+  //-         img(class="card-img-top" src="http://localhost:4040/#{book.image}")
+  //-       div(class="card-body")
+  //-         h3(class="card-title") #{book.name}
+  //-         h5(class="card-subtitle mb-2 text-muted")  #{book.author}
+  //-         h5(class="card-subtitle mb-2 text-muted")  #{book.stock}
+  //-         h5(class="card-subtitle mb-2 text-muted")  #{book.state}
+  //-         //- p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.
+  //-         a(href="/book/#{book.id}" class="card-link") Ver detalle
+  //-         //- a(href="#" class="card-link") Another link

@@ -8,7 +8,7 @@ router.get('/', async function (req, res, next) {
 
   res.render('index', {
     respuesta: books,
-    title: "Mis Libros"
+    title: "Entrelíneas"
   });
 
 });
