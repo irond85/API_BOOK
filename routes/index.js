@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 const book_services = require('../services/books.services');
-const fileUpload = require('express-fileupload')
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
