@@ -11,9 +11,10 @@ a {
   display: grid;
   gap: 5%;
   grid-auto-flow: dense;
-  grid-auto-rows: 35.3rem;
+  grid-auto-rows: 45rem;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   margin-top: 2rem;
+  position: relative;
 }
 
 .detalle{
@@ -36,8 +37,58 @@ a {
   text-align: center;
   text-decoration: none;
   padding: 5px;
+  height: 40px;
+  width: 120%;
+  margin-left: -15px;
 }
+
 .boton_detalle:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgb(21, 57, 71);
+  transition: all 0.2s ease;
+}
+
+.boton_agregar {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 18px;
+  font-weight: bold;
+  background: #00008B;
+  border-color: #00008B;
+  position: relative;
+  border-radius: 3rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  height: 40px;
+  width: 120%;
+  margin-left: -15px;
+  margin-top: 2px;
+}
+
+.boton_agregar:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgb(21, 57, 71);
+  transition: all 0.2s ease;
+}
+
+.boton_guardar {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 18px;
+  font-weight: bold;
+  background: #00008B;
+  border-color: #00008B;
+  position: relative;
+  border-radius: 3rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  height: 40px;
+  width: 120%;
+  margin-left: -15px;
+  margin-top: 2px;
+}
+
+.boton_guardar:hover {
   color: rgba(255, 255, 255, 1) !important;
   box-shadow: 0 4px 16px rgb(21, 57, 71);
   transition: all 0.2s ease;

@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+    div(class="container-fluid")
+        div(class="container" style="margin-top: 78px;")
+            h1(style ="margin-top: 25px; font-weight: bold; text-align: center") Agregar una Imagen
+            div(class="card" style="margin-top: 35px;")
+                form(action="/upload_img/#{libro.id}" method="post" enctype="multipart/form-data" style="margin-top: 1rem") 
+                    div(class="form-group" style="margin-left: 23rem")
+                        label(class="form-label" style="text-align: center") Agregar imagen para el libro: #{libro.name}
+                        br
+                        input(type="file" class="form-control-file" id="image" name="image" accept="image/png, image/gif, image/jpeg, image/jpg")
+                    div(style="margin-top: 1rem")
+                        button(type="submit" class="boton_guardar") Guardar Imagen

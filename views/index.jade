@@ -5,10 +5,11 @@ block content
     h1(style ="margin-top: 78px; font-weight: bold; text-align: center") El Inventario de los Novelistas...
     div(class="galeria")
       for book in respuesta
-        div(class="card" style="border-radius: 1rem")
-          img(class="card-img-top" style="width: 10rem; margin-top: 1rem; margin-left: 5rem" src="https://www.loqueleo.com/mx/uploads/2020/06/resized/600_captura.PNG")
-          //- if book.image != null
-            //- img(class="card-img-top" src="http://localhost:4040/#{book.image}")
+        div(class="card" style="border-radius: 1rem; position: relative;")
+          div(style="width: 15rem; heigth:30rem; margin: 0 auto;")
+            if book.image != null
+              img(class="card-img" src="http://localhost:4040/#{book.image}" style="margin-top: 10px")
+
           div(class="card-body")
             h3(class="card-title" style="text-align: center;") #{book.name}
             h5(class="card-text" style="text-align: center; margin-top: 1.5rem")  Autor: #{book.author}
@@ -20,18 +21,7 @@ block content
             div(class="d-grid gap-2 col-6 mx-auto")
               a(href="/book/#{book.id}" class="boton_detalle") Ver Detalle 
                 i(class="fa-regular fa-eye")
+              a(href="/upload_img/#{book.id}" class="boton_agregar") Agregar Imagen 
+                i(class="fa-regular fa-image")
 
-            br
-  //- div(class="galeria")
-  //-   for book in respuesta
-  //-     div(class="card ")
-  //-       if book.image != null
-  //-         img(class="card-img-top" src="http://localhost:4040/#{book.image}")
-  //-       div(class="card-body")
-  //-         h3(class="card-title") #{book.name}
-  //-         h5(class="card-subtitle mb-2 text-muted")  #{book.author}
-  //-         h5(class="card-subtitle mb-2 text-muted")  #{book.stock}
-  //-         h5(class="card-subtitle mb-2 text-muted")  #{book.state}
-  //-         //- p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.
-  //-         a(href="/book/#{book.id}" class="card-link") Ver detalle
-  //-         //- a(href="#" class="card-link") Another link
+          br
