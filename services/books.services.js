@@ -1,5 +1,7 @@
 const { json } = require('express');
 const fetch = require('node-fetch');
+const FormData = require("form-data");
+const fs = require("fs");
 
 /**
  * REalizar consumo de api
@@ -27,5 +29,18 @@ exports.saveBook = async (book) => {
     body: JSON.stringify(book),
     headers: { 'Content-Type': 'application/json' }
   });
+}
+
+exports.uploadImg = async (id, req) => {
+  const form = new FormData();
+  form.append("image", fs.createReadStream(req.dir));
+
+  const res = await fetch(`http://localhost:4040/api/book/upload/${id}`, {
+    method: 'post',
+    body: form,
+  })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
