@@ -36,12 +36,7 @@ router.post('/add_book', async (req, res, next) => {
     return;
   }
 
-  //Save the book
-  const response = await fetch('http://localhost:4040/api/book', {
-    method: 'post',
-    body: JSON.stringify(book),
-    headers: { 'Content-Type': 'application/json' }
-  });
+  book_services.saveBook(book);
 
   //Get all books
   let books = await book_services.findBooks();
@@ -51,6 +46,14 @@ router.post('/add_book', async (req, res, next) => {
     title: "Mis Libros"
   });
 
+});
+
+router.get('/upload_img/:bookId', async (req, res, next) => {
+  let idBook = req.params.bookId;
+
+  let book = await book_services.findBookById(idBook);
+
+  res.render('upload', { libro: book.book });
 });
 
 module.exports = router;
