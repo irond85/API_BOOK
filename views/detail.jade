@@ -3,11 +3,13 @@ extends layout
 block content
 
     div(class="container-fluid")
-        div(class="card" style="margin-top: 78px; border-radius:5rem;")
-            h1(style ="margin-top: 25px; font-weight: bold; text-align: center") Detalle del Libro: #{respuesta.name}
+        div(class="card" style="margin-top: 78px; border-radius:5rem; margin-bottom: 0.5rem; width: 45rem; margin-left: 19rem")
+            h1(style ="margin-top: 25px; font-weight: bold; text-align: center") Detalle del Libro:
+            h1(style ="font-weight: bold; text-align: center") #{respuesta.name}
             div(style="margin: 0 auto;")
-                img(class="card-img-top" style="width: 25rem; height: 32rem; margin-top: 1rem;" src="http://localhost:4040/#{respuesta.image}")
+                if respuesta.image != null
+                    img(class="card-img-top" style="width: 25rem; height: 32rem; margin-top: 1rem;" src="http://localhost:4040/#{respuesta.image}")
             p(style="font-weight: bold; text-align: center; margin-top: 1rem; font-size: 20px") Autor: #{respuesta.author}
             p(style="font-weight: bold; text-align: center; font-size: 20px") Unidades Disponibles: #{respuesta.stock}
             p(style="font-weight: bold; text-align: center; font-size: 20px;") Estado para Prestamo: #{respuesta.state}
-    br
+
