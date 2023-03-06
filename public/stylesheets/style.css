@@ -9,12 +9,10 @@ a {
 
 .galeria{
   display: grid;
-  gap: 5%;
-  grid-auto-flow: dense;
+  gap: 20px;
   grid-auto-rows: 45rem;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   margin-top: 2rem;
-  position: relative;
 }
 
 .detalle{
@@ -93,3 +91,4 @@ a {
   box-shadow: 0 4px 16px rgb(21, 57, 71);
   transition: all 0.2s ease;
 }
+

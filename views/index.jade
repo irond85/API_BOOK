@@ -14,7 +14,12 @@ block content
             h3(class="card-title" style="text-align: center;") #{book.name}
             h5(class="card-text" style="text-align: center; margin-top: 1.5rem")  Autor: #{book.author}
             h5(class="card-text" style="text-align: center")  Stock: #{book.stock} libro(s)
-            h5(class="card-text" style="text-align: center;")  Estado: #{book.state}
+            if book.state == "Disponible"
+              h5(class="card-text" style="text-align: center;")  Estado: #{book.state} 
+                i(class="fa-regular fa-circle-check" style="color: green")
+            else 
+              h5(class="card-text" style="text-align: center;")  Estado: #{book.state} 
+                i(class="fa-regular fa-circle-xmark" style="color: red")
             br
             p(class="card-text" style="text-align: center") ¿Deseas conocer más sobre tu libro favorito? 
 
@@ -23,5 +28,3 @@ block content
                 i(class="fa-regular fa-eye")
               a(href="/upload_img/#{book.id}" class="boton_agregar") Agregar Imagen 
                 i(class="fa-regular fa-image")
-
-          br

@@ -19,7 +19,8 @@ router.get('/book/:bookId', async function (req, res, next) {
   let book = await book_services.findBookById(idBook);
 
   res.render('detail', {
-    respuesta: book.book
+    respuesta: book.book,
+    title: "Detalles"
   });
 
 });
@@ -49,15 +50,27 @@ router.post('/add_book', async (req, res, next) => {
 });
 
 router.get('/upload_img/:bookId', async (req, res, next) => {
+  title: "Portadas"
   let idBook = req.params.bookId;
 
   let book = await book_services.findBookById(idBook);
 
   res.render('upload', { libro: book.book });
+
 });
 
 router.post('/upload_img/:bookId', async (req, res, next) => {
   let idBook = req.params.bookId;
+  let notNull = req.files;
+
+  if (notNull == null) {
+    let idBook = req.params.bookId;
+    let book = await book_services.findBookById(idBook);
+
+    res.render('upload', { libro: book.book, error: true });
+    return;
+  }
+
   let { image } = req.files;
 
   //Create the route for save the img in own side, for seek easy
